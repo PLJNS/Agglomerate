@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Agglomerate_Example' do
+  pod 'Agglomerate', :path => '../'
+
+  target 'Agglomerate_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
