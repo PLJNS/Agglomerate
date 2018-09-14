@@ -1,0 +1,6 @@
+framework module Agglomerate {
+  umbrella header "Agglomerate-umbrella.h"
+
+  export *
+  module * { export * }
+}

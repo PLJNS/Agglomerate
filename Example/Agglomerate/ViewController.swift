@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Agglomerate
 
 class ViewController: UIViewController {
 

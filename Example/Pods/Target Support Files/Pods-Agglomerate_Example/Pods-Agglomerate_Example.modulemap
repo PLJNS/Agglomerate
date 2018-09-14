@@ -1,0 +1,6 @@
+framework module Pods_Agglomerate_Example {
+  umbrella header "Pods-Agglomerate_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

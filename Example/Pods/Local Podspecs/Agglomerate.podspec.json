@@ -1,0 +1,39 @@
+{
+  "name": "Agglomerate",
+  "version": "0.1.0",
+  "summary": "A short description of Agglomerate.",
+  "homepage": "https://github.com/PLJNS/Agglomerate",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "PLJNS": "me@pljns.com"
+  },
+  "source": {
+    "git": "https://github.com/PLJNS/Agglomerate.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "Agglomerate/Classes/**/*",
+  "subspecs": [
+    {
+      "name": "Swift",
+      "source_files": "Agglomerate/Classes/Swift/**/*"
+    },
+    {
+      "name": "ReuseIdentifiable",
+      "source_files": "Agglomerate/Classes/ReuseIdentifiable/**/*"
+    },
+    {
+      "name": "Foundation",
+      "source_files": "Agglomerate/Classes/Foundation/**/*"
+    },
+    {
+      "name": "UIKit",
+      "source_files": "Agglomerate/Classes/UIKit/**/*"
+    }
+  ]
+}
