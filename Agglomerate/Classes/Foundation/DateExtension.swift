@@ -6,7 +6,7 @@ extension Date {
     ///
     /// - Parameter format: See DateFormat enum
     /// - Returns: A string if possible
-    func string(format: DateFormat) -> String? {
+    func string(format: String) -> String? {
         return DateFormatter.string(of: self, using: format)
     }
 }

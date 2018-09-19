@@ -1,5 +1,3 @@
-import UIKit
-
 extension UIImageView {
     
     /// Convience init with content mode

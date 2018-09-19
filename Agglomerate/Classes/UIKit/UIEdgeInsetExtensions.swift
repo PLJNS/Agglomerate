@@ -1,5 +1,3 @@
-import UIKit
-
 extension UIEdgeInsets {
     
     /// Creates a UIEdgeInset with the passed in value all around

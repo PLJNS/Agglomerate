@@ -24,16 +24,20 @@
       "source_files": "Agglomerate/Classes/Swift/**/*"
     },
     {
-      "name": "ReuseIdentifiable",
-      "source_files": "Agglomerate/Classes/ReuseIdentifiable/**/*"
-    },
-    {
       "name": "Foundation",
       "source_files": "Agglomerate/Classes/Foundation/**/*"
     },
     {
       "name": "UIKit",
       "source_files": "Agglomerate/Classes/UIKit/**/*"
+    },
+    {
+      "name": "NSLayoutConstraint",
+      "source_files": "Agglomerate/Classes/NSLayoutConstraint/**/*"
+    },
+    {
+      "name": "ViewIdentifiable",
+      "source_files": "Agglomerate/Classes/ViewIdentifiable/**/*"
     }
   ]
 }

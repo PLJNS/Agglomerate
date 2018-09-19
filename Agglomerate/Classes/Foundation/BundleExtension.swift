@@ -12,10 +12,5 @@ extension Bundle {
         return infoDictionary?["CFBundleVersion"] as? String
     }
     
-    /// Formatted release version number.
-    var formattedReleaseVersionNumber: String {
-        return "VERSION \(releaseVersionNumber ?? "1.0.0")"
-    }
-    
 }
 

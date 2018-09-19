@@ -37,19 +37,6 @@ extension String {
         return NSLocalizedString(self, comment: comment)
     }
     
-    /// Removes the trailing line after the given token.
-    ///
-    /// - Parameter token: Token to search for.
-    /// - Returns: String of the removed trailing string. Includes removing the token.
-    func removeTrailing(startWith token: String) -> String {
-        if let token = range(of: token) {
-            var newString = self
-            newString.removeSubrange(token.lowerBound..<endIndex)
-            return newString
-        }
-        return self
-    }
-    
     /// Returns nil if empty, quite useful when "" means the same as nil to you.
     var nilIfEmpty: String? {
         return isEmpty ? nil : self

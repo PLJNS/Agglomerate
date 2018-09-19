@@ -1,15 +1,37 @@
-//
-//  UIViewExtension.swift
-//  TheWing
-//
-//  Created by Jonathan Samudio on 3/21/18.
-//  Copyright © 2018 Prolific Interactive. All rights reserved.
-//
-
-import UIKit
-
 extension UIView {
 
+    func addInterpolatingMotionEffects(minimaxRelativeValue: Double = 10) {
+        _ = NotificationCenter.default.addObserver(forName: NSNotification.Name
+            .UIAccessibilityReduceMotionStatusDidChange,
+                                                   object: self, queue: nil) { [weak self] _ in
+                                                    if UIAccessibilityIsReduceMotionEnabled() {
+                                                        self?.removeMotions()
+                                                    } else {
+                                                        self?.addInterpolatingMotionEffects(minimaxRelativeValue: minimaxRelativeValue)
+                                                    }
+        }
+        
+        let motionX = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
+        let motionY = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
+        
+        motionX.minimumRelativeValue = -minimaxRelativeValue
+        motionX.maximumRelativeValue = minimaxRelativeValue
+        motionY.minimumRelativeValue = -minimaxRelativeValue
+        motionY.maximumRelativeValue = minimaxRelativeValue
+        
+        let effectGroup = UIMotionEffectGroup()
+        effectGroup.motionEffects = [motionX, motionY]
+        
+        if !UIAccessibilityIsReduceMotionEnabled() {
+            addMotionEffect(effectGroup)
+        }
+    }
+    
+    /// Removes all motion effects from `self`.
+    func removeMotions() {
+        motionEffects = []
+    }
+    
     /// Returns height of view if given fixed width.
     ///
     /// - Parameter width: Width.
@@ -23,36 +45,12 @@ extension UIView {
         return heightForWidth(frame.width)
     }
     
-    /// Removes all gesture recognizers.
-    func removeGestureRecognizers() {
-        guard let gestureRecognizers = gestureRecognizers else {
-            return
-        }
-        for gestureRocognizer in gestureRecognizers {
-            removeGestureRecognizer(gestureRocognizer)
-        }
-    }
-    
-    /// Make the view look circular.
-    func updateCornerRadiusForCircularMask() {
-        layer.cornerRadius = frame.size.height / 2
-        layer.masksToBounds = true
-        layer.borderWidth = 0
-    }
-    
-    /// Set an aspect ratio to the view.
-    ///
-    /// - Parameters:
-    ///   - height: height aspect ratio
-    ///   - width: width aspect ratio
-    func autoMatchAspectRatio(withHeight height: CGFloat, andWidth width: CGFloat) {
-        addConstraint(NSLayoutConstraint(item: self,
-                                         attribute: .height,
-                                         relatedBy: .equal,
-                                         toItem: self,
-                                         attribute: .width,
-                                         multiplier: height / width,
-                                         constant: 0))
+    var snapshot: UIImage? {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque, UIScreen.main.scale)
+        drawHierarchy(in: bounds, afterScreenUpdates: true)
+        let wholeImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return wholeImage
     }
     
     /// Animates each keyframe equally over the course of the duration.

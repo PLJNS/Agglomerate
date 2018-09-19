@@ -1,13 +1,15 @@
 PODS:
   - Agglomerate (0.1.0):
     - Agglomerate/Foundation (= 0.1.0)
-    - Agglomerate/ReuseIdentifiable (= 0.1.0)
+    - Agglomerate/NSLayoutConstraint (= 0.1.0)
     - Agglomerate/Swift (= 0.1.0)
     - Agglomerate/UIKit (= 0.1.0)
+    - Agglomerate/ViewIdentifiable (= 0.1.0)
   - Agglomerate/Foundation (0.1.0)
-  - Agglomerate/ReuseIdentifiable (0.1.0)
+  - Agglomerate/NSLayoutConstraint (0.1.0)
   - Agglomerate/Swift (0.1.0)
   - Agglomerate/UIKit (0.1.0)
+  - Agglomerate/ViewIdentifiable (0.1.0)
 
 DEPENDENCIES:
   - Agglomerate (from `../`)
@@ -17,7 +19,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Agglomerate: 7fb6da99cc5d1089e95865fa12091673de57235a
+  Agglomerate: 5200cd5077296e68df323edec8981aee8b0f5903
 
 PODFILE CHECKSUM: 8aa5d3920e8372666f7c64f1c9b4619fc9982c5d
 

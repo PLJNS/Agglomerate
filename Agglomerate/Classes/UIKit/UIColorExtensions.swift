@@ -1,6 +1,3 @@
-import Foundation
-import UIKit
-
 extension UIColor {
 
     /// Initialize and return a UIColor object that corresponds to the given hex string

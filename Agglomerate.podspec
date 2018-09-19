@@ -15,10 +15,6 @@ Pod::Spec.new do |s|
   s.subspec 'Swift' do |swift|
       swift.source_files = 'Agglomerate/Classes/Swift/**/*'
   end
-  
-  s.subspec 'ReuseIdentifiable' do |reuse_identifiable|
-      reuse_identifiable.source_files = 'Agglomerate/Classes/ReuseIdentifiable/**/*'
-  end
 
   s.subspec 'Foundation' do |foundation|
       foundation.source_files = 'Agglomerate/Classes/Foundation/**/*'
@@ -26,6 +22,10 @@ Pod::Spec.new do |s|
 
   s.subspec 'UIKit' do |uikit|
       uikit.source_files = 'Agglomerate/Classes/UIKit/**/*'
+  end
+  
+  s.subspec 'ViewIdentifiable' do |view_identifiable|
+      view_identifiable.source_files = 'Agglomerate/Classes/ViewIdentifiable/**/*'
   end
   
 end

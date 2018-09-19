@@ -15,7 +15,6 @@ extension Dictionary {
     
 }
 
-// MARK: - OptionalType
 extension Dictionary where Value: OptionalType {
     
     /// Filters nil values.
@@ -31,8 +30,6 @@ extension Dictionary where Value: OptionalType {
 
 }
 
-
-// MARK: - [String]]
 extension Dictionary where Dictionary == [String: [String]] {
     
     /// Returns an array of query items representing array queries.

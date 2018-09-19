@@ -1,5 +1,3 @@
-import UIKit
-
 extension UIStackView {
     
     /// Removes all arranged subviews.
